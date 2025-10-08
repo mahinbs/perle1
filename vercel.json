@@ -1,12 +1,7 @@
 {
   "version": 2,
   "name": "perle-ai-search",
-  "builds": [
-    {
-      "src": "index.html",
-      "use": "@vercel/static"
-    }
-  ],
+  "public": true,
   "rewrites": [
     {
       "source": "/(.*)",
