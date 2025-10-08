@@ -158,7 +158,7 @@ export default function App() {
   }
 
   return (
-    <div style={{ minHeight: '100vh', position: 'relative', overflow: 'hidden', background: BG, color: FG, display: 'flex', flexDirection: 'column' }}>
+    <div style={{ minHeight: '100vh', position: 'relative', overflow: 'hidden', background: BG, color: FG, display: 'flex', flexDirection: 'column'}}>
       <button
         style={profileBtnStyle}
         className="perle-breath perle-ico-hover"
@@ -191,7 +191,7 @@ export default function App() {
         <div style={signInStyles} data-testid="sign-in-pill" className="perle-float" data-anim="float">Sign In</div>
 
         {/* Categories */}
-        <div style={{ margin: '12px 2px 16px' }}>
+        <div style={{ margin: '12px 2px 16px' }} className='category-container'>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }} data-testid="category-grid">
             {categories.map(({ label, query, Icon }, idx) => (
               <button

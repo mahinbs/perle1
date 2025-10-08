@@ -151,6 +151,8 @@
             margin: 8px 0 8px;
             padding: 0 16px;
         }
+
+   
         
         .category-grid {
             display: flex;
@@ -163,6 +165,13 @@
             -webkit-overflow-scrolling: touch; /* iOS smooth scrolling */
             scroll-behavior: smooth;
         }
+
+        @media (max-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+    .category-grid {
+        margin: 15px 0 140px !important; /* Maximum bottom margin for iPhone */
+        padding: 0 8px;
+    }
+}
         
         
         .category-card {
