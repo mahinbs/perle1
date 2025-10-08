@@ -433,8 +433,8 @@
                 bottom: 0 !important;
                 left: 0 !important;
                 right: 0 !important;
-                height: 64px;
-                padding: 10px 12px calc(14px + env(safe-area-inset-bottom)) 12px;
+                height: 70px !important; /* Increased height for iPhone */
+                padding: 12px 12px calc(16px + env(safe-area-inset-bottom)) 12px !important;
                 border-radius: 18px 18px 0 0;
                 z-index: 1000 !important;
             }
@@ -468,11 +468,11 @@
             }
             
             .bottom {
-                padding: 0 12px calc(100px + env(safe-area-inset-bottom)); /* Increased bottom padding to account for fixed input bar and safe area */
+                padding: 0 12px calc(120px + env(safe-area-inset-bottom)) !important; /* Extra padding for iPhone */
             }
             
             .categories {
-                margin: 8px 0 20px; /* Increased bottom margin for better spacing */
+                margin: 12px 0 30px !important; /* Much more bottom margin */
                 padding: 0 8px;
             }
             
@@ -482,14 +482,35 @@
             }
         }
         
-        @media (max-width: 480px) {
+        /* iPhone specific styles */
+        @media (max-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
             .bottom {
-                padding: 0 12px calc(110px + env(safe-area-inset-bottom)); /* Extra padding for smaller screens and safe area */
+                padding: 0 12px calc(140px + env(safe-area-inset-bottom)) !important; /* Extra padding for iPhone */
             }
             
             .categories {
-                margin: 8px 0 25px; /* Increased bottom margin for better spacing */
+                margin: 15px 0 40px !important; /* Maximum bottom margin for iPhone */
                 padding: 0 8px;
+                background: rgba(0,0,0,0.1) !important; /* Debug background to see categories area */
+                border-radius: 8px !important;
+            }
+            
+            .input-bar {
+                height: 75px !important; /* Extra height for iPhone */
+                padding: 15px 12px calc(20px + env(safe-area-inset-bottom)) 12px !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .bottom {
+                padding: 0 12px calc(130px + env(safe-area-inset-bottom)) !important; /* Extra padding for smaller iPhone screens */
+            }
+            
+            .categories {
+                margin: 12px 0 35px !important; /* Much more bottom margin for small screens */
+                padding: 0 8px;
+                background: rgba(0,0,0,0.1) !important; /* Debug background to see categories area */
+                border-radius: 8px !important;
             }
             
             .category-card {
