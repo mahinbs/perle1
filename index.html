@@ -434,7 +434,7 @@
                 left: 0 !important;
                 right: 0 !important;
                 height: 64px;
-                padding: 10px 12px 14px 12px;
+                padding: 10px 12px calc(14px + env(safe-area-inset-bottom)) 12px;
                 border-radius: 18px 18px 0 0;
                 z-index: 1000 !important;
             }
@@ -468,7 +468,12 @@
             }
             
             .bottom {
-                padding: 0 12px 80px; /* Add bottom padding to account for fixed input bar */
+                padding: 0 12px calc(100px + env(safe-area-inset-bottom)); /* Increased bottom padding to account for fixed input bar and safe area */
+            }
+            
+            .categories {
+                margin: 8px 0 20px; /* Increased bottom margin for better spacing */
+                padding: 0 8px;
             }
             
             .sign-in {
@@ -478,8 +483,12 @@
         }
         
         @media (max-width: 480px) {
+            .bottom {
+                padding: 0 12px calc(110px + env(safe-area-inset-bottom)); /* Extra padding for smaller screens and safe area */
+            }
+            
             .categories {
-                margin: 4px 0 8px;
+                margin: 8px 0 25px; /* Increased bottom margin for better spacing */
                 padding: 0 8px;
             }
             
